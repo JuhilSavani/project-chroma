@@ -88,7 +88,7 @@ const ColorChart: React.FC<{ palette: ColorData[] }> = ({ palette }) => {
 
     return (
         <Card>
-            <h3 className="text-lg text-gray-100 mb-4">Color Proportions</h3>
+            <h3 className="text-lg text-gray-100 mb-4">Palette proportions</h3>
             <div className="w-full h-56">
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={chartData} layout="vertical" margin={{ top: 5, right: 20, left: -10, bottom: 5 }}>
@@ -115,9 +115,9 @@ const ColorChart: React.FC<{ palette: ColorData[] }> = ({ palette }) => {
 
 const RecoloredImage: React.FC<{ imageUrl: string }> = ({ imageUrl }) => (
     <Card>
-        <h3 className="text-lg text-gray-100 mb-4">Recolored Image</h3>
+        <h3 className="text-lg text-gray-100 mb-4">Quantized image</h3>
         <div className="flex items-center justify-center bg-gray-900/50 rounded-lg overflow-hidden h-56">
-             <img src={imageUrl} alt="Recolored based on palette" className="w-full h-full object-contain" />
+             <img src={imageUrl} alt="Color-quantized version of the uploaded image" className="w-full h-full object-contain" />
         </div>
     </Card>
 );
@@ -164,7 +164,7 @@ const DownloadButton: React.FC<{ palette: ColorData[] }> = ({ palette }) => {
       className={`inline-flex items-center justify-center rounded-md text-sm font-medium focus-visible:outline-none disabled:opacity-50 disabled:pointer-events-none px-4 py-2 border border-white/20 hover:border-white/40 transition duration-500 text-white`}
     >
       <Download className="w-4 h-4 mr-2" />
-      Download Palette
+      Export Palette
     </button>
   );
 };

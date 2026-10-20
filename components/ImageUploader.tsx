@@ -22,7 +22,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageUpload, imageUrl, 
       if (file.type.startsWith('image/')) {
         onImageUpload(file);
       } else {
-        alert('Please upload a valid image file (JPG, PNG).');
+        alert('Please upload a PNG or JPEG image.');
       }
     }
   };
@@ -73,9 +73,9 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageUpload, imageUrl, 
             <div className="flex flex-col items-center justify-center pt-5 pb-6">
               <Upload className={`w-10 h-10 mb-3 ${isDragging ? 'text-sky-400' : 'text-gray-500'}`} />
               <p className={`mb-2 text-sm text-center ${isDragging ? 'text-sky-400' : 'text-gray-400'}`}>
-                <span className="font-semibold">Click to upload</span> or drag and drop
+                <span className="font-semibold">Choose an image</span> or drag it here
               </p>
-              <p className="text-xs text-gray-500">PNG or JPG</p>
+              <p className="text-xs text-gray-500">PNG or JPEG</p>
             </div>
           </label>
         </div>
@@ -83,7 +83,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageUpload, imageUrl, 
           {imageUrl ? (
             <img src={imageUrl} alt="Uploaded preview" className="w-full h-full object-contain" />
           ) : (
-            <div className="text-gray-500 text-sm">Image Preview</div>
+            <div className="text-gray-500 text-sm">No image selected</div>
           )}
         </div>
       </div>
