@@ -88,7 +88,7 @@ const ColorChart: React.FC<{ palette: ColorData[] }> = ({ palette }) => {
 
     return (
         <Card>
-            <h3 className="text-lg text-gray-100 mb-4">Palette proportions</h3>
+            <h3 className="text-lg text-gray-100 mb-4">Color Proportions</h3>
             <div className="w-full h-56">
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={chartData} layout="vertical" margin={{ top: 5, right: 20, left: -10, bottom: 5 }}>
