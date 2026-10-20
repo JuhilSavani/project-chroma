@@ -36,12 +36,19 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageUpload, imageUrl, 
   const handleDragLeave = useCallback((e: React.DragEvent<HTMLLabelElement>) => {
     e.preventDefault();
     e.stopPropagation();
-    setIsDragging(false);
+
+    // Ignore dragleave events caused by moving between the label and its
+    // children. Only clear the state when the pointer leaves the drop zone.
+    const relatedTarget = e.relatedTarget;
+    if (!relatedTarget || !e.currentTarget.contains(relatedTarget as Node)) {
+      setIsDragging(false);
+    }
   }, []);
 
   const handleDragOver = useCallback((e: React.DragEvent<HTMLLabelElement>) => {
     e.preventDefault();
     e.stopPropagation();
+    setIsDragging(true);
   }, []);
 
   const handleDrop = useCallback((e: React.DragEvent<HTMLLabelElement>) => {
