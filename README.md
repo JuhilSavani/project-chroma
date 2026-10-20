@@ -9,7 +9,7 @@ Live demo: [juhilsavani.github.io/project-chroma](https://juhilsavani.github.io/
 - Accepts PNG and JPEG images from the user’s device.
 - Processes the image locally in the browser; there is no application backend.
 - Reduces the image to a maximum dimension of 200 pixels for faster processing.
-- Groups opaque pixels into 2–5 RGB color clusters.
+- Groups opaque pixels into 2–10 RGB color clusters.
 - Reports each cluster as HEX, RGB, and CMYK values.
 - Estimates the proportion of the image represented by each color.
 - Generates a color-quantized preview using the cluster centroids.

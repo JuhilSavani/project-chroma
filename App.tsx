@@ -27,7 +27,7 @@ interface ClusterControlProps {
 
 const ClusterControl: React.FC<ClusterControlProps> = ({ numClusters, setNumClusters, isLoading }) => {
     const canDecrement = numClusters > 2;
-    const canIncrement = numClusters < 5;
+    const canIncrement = numClusters < 10;
     
     return (
         <div className="flex flex-col items-center justify-center my-6 space-y-2">
@@ -43,7 +43,7 @@ const ClusterControl: React.FC<ClusterControlProps> = ({ numClusters, setNumClus
                 </button>
                 <span className="text-lg font-semibold text-gray-100 w-8 text-center" aria-live="polite">{numClusters}</span>
                 <button
-                    onClick={() => setNumClusters(p => Math.min(5, p + 1))}
+                    onClick={() => setNumClusters(p => Math.min(10, p + 1))}
                     disabled={!canIncrement || isLoading}
                     className="p-2 rounded-full bg-gray-900 border border-gray-800 shadow-md disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-800 transition-colors"
                     aria-label="Increase palette size"
