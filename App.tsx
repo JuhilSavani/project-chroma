@@ -14,7 +14,7 @@ const Hero: React.FC = () => (
       Extract a compact color palette from an image.
     </p>
     <p className="mt-3 text-base text-gray-500 max-w-xl mx-auto">
-      Images are processed locally in your browser with RGB k-means clustering.
+      A browser-based local image color quantization tool using unsupervised k-means clustering in RGB color space to extract dominant colors, estimate palette proportions, and generate a reduced-color raster image.
     </p>
   </header>
 );
